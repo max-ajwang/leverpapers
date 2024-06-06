@@ -1,16 +1,16 @@
 import Order from '../models/OrderModel.js';
-import 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 
 //GET ALL ORDERS
 export const getAllOrders = async (req, res) => {
   const orders = await Order.find({});
-  res.status(200).json({ orders });
+  res.status(StatusCodes.OK).json({ orders });
 };
 
 //CREATE ORDER
 export const createOrder = async (req, res) => {
   const order = await Order.create(req.body);
-  res.status(200).json({ order });
+  res.status(StatusCodes.CREATED).json({ order });
 };
 
 //GET ORDER
@@ -21,7 +21,7 @@ export const getOrder = async (req, res) => {
   if (!order) {
     return res.status(404).json({ msg: `no order with id ${id}` });
   }
-  res.status(200).json({ order });
+  res.status(StatusCodes.OK).json({ order });
 };
 
 //UPDATE ORDER
@@ -35,7 +35,7 @@ export const updateOrder = async (req, res) => {
     return res.status(404).json({ msg: `no order with id ${id}` });
   }
 
-  res.status(200).json({ order: updatedOrder });
+  res.status(StatusCodes.OK).json({ order: updatedOrder });
 };
 
 //DELETE ORDER
@@ -47,5 +47,5 @@ export const deleteOrder = async (req, res) => {
     return res.status(404).json({ msg: `no order with id ${id}` });
   }
 
-  res.status(200).json({ order: removedOrder });
+  res.status(StatusCodes.OK).json({ order: removedOrder });
 };
