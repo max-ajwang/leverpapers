@@ -1,5 +1,6 @@
 import Order from '../models/OrderModel.js';
 import { StatusCodes } from 'http-status-codes';
+import { NotFoundError } from '../orders/customErrors.js';
 
 //GET ALL ORDERS
 export const getAllOrders = async (req, res) => {
@@ -17,10 +18,7 @@ export const createOrder = async (req, res) => {
 export const getOrder = async (req, res) => {
   const { id } = req.params;
   const order = await Order.findById(id);
-
-  if (!order) {
-    return res.status(404).json({ msg: `no order with id ${id}` });
-  }
+  if (!order) throw new NotFoundError(`no order with id ${id}`);
   res.status(StatusCodes.OK).json({ order });
 };
 
@@ -30,11 +28,7 @@ export const updateOrder = async (req, res) => {
   const updatedOrder = await Order.findByIdAndUpdate(id, req.body, {
     new: true,
   });
-
-  if (!updatedOrder) {
-    return res.status(404).json({ msg: `no order with id ${id}` });
-  }
-
+  if (!updatedOrder) throw new NotFoundError(`no order with id ${id}`);
   res.status(StatusCodes.OK).json({ order: updatedOrder });
 };
 
@@ -42,10 +36,6 @@ export const updateOrder = async (req, res) => {
 export const deleteOrder = async (req, res) => {
   const { id } = req.params;
   const removedOrder = await Order.findByIdAndDelete(id);
-
-  if (!removedOrder) {
-    return res.status(404).json({ msg: `no order with id ${id}` });
-  }
-
+  if (!removedOrder) throw new NotFoundError(`no order with id ${id}`);
   res.status(StatusCodes.OK).json({ order: removedOrder });
 };
