@@ -3,26 +3,10 @@ dotenv.config();
 import express from 'express';
 const app = express();
 import morgan from 'morgan';
-import { nanoid } from 'nanoid';
+import mongoose from 'mongoose';
 
-let orders = [
-  {
-    id: nanoid(),
-    order_type: 'writing',
-    pages: 3,
-    subject: 'coding',
-    topic: 'MERN stack',
-    sources: 3,
-  },
-  {
-    id: nanoid(),
-    order_type: 'editing',
-    pages: 3,
-    subject: 'social work',
-    topic: 'nursing',
-    sources: 3,
-  },
-];
+//
+import orderRouter from './routes/orderRouter.js';
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -39,12 +23,25 @@ app.post('/', (req, res) => {
   res.json({ message: 'data received', data: req.body });
 });
 
-app.get('/api/v1/orders', (req, res) => {
-  res.status(200).json({ orders });
+app.use('/api/v1/orders', orderRouter);
+
+app.use('*', (req, res) => {
+  res.status(404).json({ msg: 'not found' });
+});
+
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500).json({ msg: 'something went wrong' });
 });
 
 const port = process.env.PORT || 5100;
 
-app.listen(port, () => {
-  console.log(`server running on port ${port}....`);
-});
+try {
+  await mongoose.connect(process.env.MONGO_URL);
+  app.listen(port, () => {
+    console.log(`server running on port ${port}....`);
+  });
+} catch (error) {
+  console.log(error);
+  process.exit(1);
+}
