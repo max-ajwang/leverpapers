@@ -1,95 +1,51 @@
 import Order from '../models/OrderModel.js';
+import 'http-status-codes';
 
-import { nanoid } from 'nanoid';
-
-let orders = [
-  {
-    id: nanoid(),
-    order_type: 'writing',
-    pages: 3,
-    subject: 'coding',
-    topic: 'MERN stack',
-    sources: 3,
-  },
-  {
-    id: nanoid(),
-    order_type: 'editing',
-    pages: 3,
-    subject: 'social work',
-    topic: 'nursing',
-    sources: 3,
-  },
-];
-
+//GET ALL ORDERS
 export const getAllOrders = async (req, res) => {
+  const orders = await Order.find({});
   res.status(200).json({ orders });
 };
 
+//CREATE ORDER
 export const createOrder = async (req, res) => {
-  const {
-    orderType,
-    paperType,
-    educationLevel,
-    subject,
-    topic,
-    pages,
-    sources,
-    citationStyle,
-    language,
-    deadline,
-  } = req.body;
-
-  const order = await Order.create({
-    orderType,
-    paperType,
-    subject,
-    topic,
-    deadline,
-  });
-
-  res.status(201).json({ order });
+  const order = await Order.create(req.body);
+  res.status(200).json({ order });
 };
 
+//GET ORDER
 export const getOrder = async (req, res) => {
   const { id } = req.params;
-  const order = orders.find((order) => order.id === id);
+  const order = await Order.findById(id);
+
   if (!order) {
-    //throw new Error('no order with that id');
     return res.status(404).json({ msg: `no order with id ${id}` });
   }
   res.status(200).json({ order });
 };
 
+//UPDATE ORDER
 export const updateOrder = async (req, res) => {
-  const { order_type, pages, subject, topic, sources } = req.body;
-  if (!order_type || !pages || !subject || !topic || !sources) {
-    return res.status(400).json({
-      msg: 'please provide order type, pages, subject, topic and sources',
-    });
-  }
   const { id } = req.params;
-  const order = orders.find((order) => order.id === id);
-  if (!order) {
+  const updatedOrder = await Order.findByIdAndUpdate(id, req.body, {
+    new: true,
+  });
+
+  if (!updatedOrder) {
     return res.status(404).json({ msg: `no order with id ${id}` });
   }
 
-  order.order_type = order_type;
-  order.pages = pages;
-  order.subject = subject;
-  order.topic = topic;
-  order.sources = sources;
-
-  res.status(200).json({ msg: 'order modified', order });
+  res.status(200).json({ order: updatedOrder });
 };
 
+//DELETE ORDER
 export const deleteOrder = async (req, res) => {
   const { id } = req.params;
-  const order = orders.find((order) => order.id === id);
-  if (!order) {
+  const removedOrder = await Order.findByIdAndDelete(id);
+
+  if (!removedOrder) {
     return res.status(404).json({ msg: `no order with id ${id}` });
   }
-  const newOrders = orders.filter((order) => order.id !== id);
-  orders = newOrders;
 
-  res.status(200).json({ msg: 'order deleted' });
+  res.status(200).json({ order: removedOrder });
 };
