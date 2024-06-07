@@ -1,83 +1,47 @@
 import mongoose from 'mongoose';
+import {
+  ORDER_TYPE,
+  PAPER_TYPE,
+  ORDER_SORT_BY,
+  EDUCATION_LEVEL,
+  SUBJECT,
+  CITATION_STYLE,
+  LANGUAGE,
+} from '../utils/constants.js';
 
 const OrderSchema = new mongoose.Schema(
   {
     orderType: {
       type: String,
-      required: [true, 'Please select type of service'],
-      maxlength: 50,
-      enum: ['Writing', 'Rewriting', 'Editing'],
+      enum: Object.values(ORDER_TYPE),
+      default: ORDER_TYPE.WRITING,
     },
 
     paperType: {
       type: String,
-      required: [true, 'Please select type of paper'],
-      maxlength: 50,
-      enum: [
-        'Essay',
-        'Admission Essay',
-        'Annotated Bibliography',
-        'Article Review',
-        'Article Writing',
-        'Book/Movie Review',
-        'Creative Writing',
-        'Case Study',
-        'Research paper',
-        'Term Paper',
-        'Thesis/Desertation',
-        'Other',
-      ],
+      enum: Object.values(PAPER_TYPE),
+      default: PAPER_TYPE.ESSAY,
     },
 
     educationLevel: {
       type: String,
       required: [true, 'Please select Education Level'],
       maxlength: 50,
-      enum: ['School', 'College', 'University', "Master's", 'Doctorate'],
-      default: 'College',
+      enum: Object.values(EDUCATION_LEVEL),
+      default: EDUCATION_LEVEL.COLLEGE,
     },
 
     subject: {
       type: String,
+      required: [true, 'Please select Subject'],
       maxlength: 50,
-      enum: [
-        'Accounting',
-        'Advertising',
-        'Agriculture',
-        'Algebra',
-        'American History',
-        'Literature',
-        'Anatomy',
-        'Programming',
-        'Psychiatry',
-        'Psychology',
-        'Public Administration',
-        'Public Relations',
-        'Python',
-        'Religion and Theology',
-        'Scholarship Writing',
-        'Sex Education',
-        'Literature',
-        'Social work',
-        'Sociology',
-        'Special Education',
-        'Sports and Athletics',
-        'SQL',
-        'Statistics',
-        'Technology',
-        'Telecommunications',
-        'Tourism',
-        'Trigonometry',
-        'Urban and Environmental Planning',
-        'Veterinary Science',
-        'Visual Arts',
-        'Web design',
-      ],
+      enum: Object.values(SUBJECT),
+      default: SUBJECT.PSYCHOLOGY,
     },
 
     topic: {
       type: String,
-      maxlength: 100,
+      maxlength: 500,
       required: [true, 'Please provide a topic for your paper'],
     },
 
@@ -94,22 +58,15 @@ const OrderSchema = new mongoose.Schema(
     citationStyle: {
       type: String,
       maxlength: 50,
-      enum: [
-        'APA 6th edition',
-        'APA 7th edition',
-        'Chicago',
-        'Havard',
-        'MLA',
-        'Other',
-      ],
-      default: 'APA 6th edition',
+      enum: Object.values(CITATION_STYLE),
+      default: CITATION_STYLE.APA_7TH_EDITION,
     },
 
     language: {
       type: String,
       maxlength: 20,
-      enum: ['English (US)', 'English (UK)', 'Spanish', 'French'],
-      default: 'English (US)',
+      enum: Object.values(LANGUAGE),
+      default: LANGUAGE.ENGLISH_US,
     },
 
     deadline: {

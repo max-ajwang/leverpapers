@@ -1,6 +1,6 @@
 import Order from '../models/OrderModel.js';
 import { StatusCodes } from 'http-status-codes';
-import { NotFoundError } from '../orders/customErrors.js';
+import { NotFoundError } from '../errors/customErrors.js';
 
 //GET ALL ORDERS
 export const getAllOrders = async (req, res) => {
