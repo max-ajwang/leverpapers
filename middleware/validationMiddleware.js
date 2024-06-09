@@ -1,4 +1,4 @@
-import { body, validationResult } from 'express-validator';
+import { body, param, validationResult } from 'express-validator';
 import { BadRequestError } from '../errors/customErrors.js';
 import {
   CITATION_STYLE,
@@ -8,6 +8,7 @@ import {
   PAPER_TYPE,
   SUBJECT,
 } from '../utils/constants.js';
+import mongoose from 'mongoose';
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -43,4 +44,10 @@ export const validateOrderInput = withValidationErrors([
   body('language')
     .isIn(Object.values(LANGUAGE))
     .withMessage('Invalid Language'),
+]);
+
+export const validateIdParam = withValidationErrors([
+  param('id')
+    .custom((value) => mongoose.Types.ObjectId.isValid(value))
+    .withMessage('Invalid MongoDB Id'),
 ]);

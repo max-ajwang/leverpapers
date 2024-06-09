@@ -8,7 +8,10 @@ import {
   updateOrder,
   deleteOrder,
 } from '../controllers/orderController.js';
-import { validateOrderInput } from '../middleware/validationMiddleware.js';
+import {
+  validateOrderInput,
+  validateIdParam,
+} from '../middleware/validationMiddleware.js';
 
 // router.get('/', getAllJobs);
 // router.post('/', createJob);
@@ -16,8 +19,8 @@ import { validateOrderInput } from '../middleware/validationMiddleware.js';
 router.route('/').get(getAllOrders).post(validateOrderInput, createOrder);
 router
   .route('/:id')
-  .get(getOrder)
-  .patch(validateOrderInput, updateOrder)
-  .delete(deleteOrder);
+  .get(validateIdParam, getOrder)
+  .patch(validateOrderInput, validateIdParam, updateOrder)
+  .delete(validateIdParam, deleteOrder);
 
 export default router;
