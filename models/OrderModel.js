@@ -25,7 +25,6 @@ const OrderSchema = new mongoose.Schema(
 
     educationLevel: {
       type: String,
-      required: [true, 'Please select Education Level'],
       maxlength: 50,
       enum: Object.values(EDUCATION_LEVEL),
       default: EDUCATION_LEVEL.COLLEGE,
@@ -33,7 +32,6 @@ const OrderSchema = new mongoose.Schema(
 
     subject: {
       type: String,
-      required: [true, 'Please select Subject'],
       maxlength: 50,
       enum: Object.values(SUBJECT),
       default: SUBJECT.PSYCHOLOGY,
@@ -42,17 +40,14 @@ const OrderSchema = new mongoose.Schema(
     topic: {
       type: String,
       maxlength: 500,
-      required: [true, 'Please provide a topic for your paper'],
     },
 
     pages: {
       type: Number,
-      default: 3,
     },
 
     sources: {
       type: Number,
-      default: 3,
     },
 
     citationStyle: {
@@ -69,12 +64,8 @@ const OrderSchema = new mongoose.Schema(
       default: LANGUAGE.ENGLISH_US,
     },
 
-    deadline: {
-      type: Date,
-      required: [true, 'Please provide deadline date'],
-    },
-
-    // Text input, instructions:{ }
+    //Deadline Date
+    //Text input, instructions:{ }
     //upload files fileupUpload: { }
   },
   { timestamps: true }
