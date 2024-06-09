@@ -1,5 +1,5 @@
 import { body, param, validationResult } from 'express-validator';
-import { BadRequestError } from '../errors/customErrors.js';
+import { BadRequestError, NotFoundError } from '../errors/customErrors.js';
 import {
   CITATION_STYLE,
   EDUCATION_LEVEL,
@@ -9,6 +9,7 @@ import {
   SUBJECT,
 } from '../utils/constants.js';
 import mongoose from 'mongoose';
+import Order from '../models/OrderModel.js';
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -17,6 +18,9 @@ const withValidationErrors = (validateValues) => {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         const errorMessages = errors.array().map((error) => error.msg);
+        if (errorMessages[0].startsWith('no order')) {
+          throw new NotFoundError(errorMessages);
+        }
         throw new BadRequestError(errorMessages);
       }
       next();
@@ -47,7 +51,11 @@ export const validateOrderInput = withValidationErrors([
 ]);
 
 export const validateIdParam = withValidationErrors([
-  param('id')
-    .custom((value) => mongoose.Types.ObjectId.isValid(value))
-    .withMessage('Invalid MongoDB Id'),
+  param('id').custom(async (value) => {
+    const isValidId = mongoose.Types.ObjectId.isValid(value);
+    if (!isValidId) throw new BadRequestError('Invalid MongoDB Id');
+
+    const order = await Order.findById(value);
+    if (!order) throw new NotFoundError(`no order with id ${value}`);
+  }),
 ]);
