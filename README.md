@@ -2720,7 +2720,7 @@ export const register = async (req, res) => {
   res.send('register');
 };
 export const login = async (req, res) => {
-  res.send('register');
+  res.send('login');
 };
 ```
 
@@ -2740,7 +2740,7 @@ export default router;
 server.js
 
 ```js
-import authRouter from './routers/authRouter.js';
+import authRouter from './routes/authRouter.js';
 
 app.use('/api/v1/auth', authRouter);
 ```
