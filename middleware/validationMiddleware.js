@@ -10,6 +10,7 @@ import {
 } from '../utils/constants.js';
 import mongoose from 'mongoose';
 import Order from '../models/OrderModel.js';
+import User from '../models/UserModel.js';
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -58,4 +59,25 @@ export const validateIdParam = withValidationErrors([
     const order = await Order.findById(value);
     if (!order) throw new NotFoundError(`no order with id ${value}`);
   }),
+]);
+
+export const validateRegisterInput = withValidationErrors([
+  body('name').notEmpty().withMessage('name is required'),
+  body('email')
+    .notEmpty()
+    .withMessage('email is required')
+    .isEmail()
+    .withMessage('invalid email format')
+    .custom(async (email) => {
+      const user = await User.findOne({ email });
+      if (user) {
+        throw new BadRequestError('email already exists');
+      }
+    }),
+  body('password')
+    .notEmpty()
+    .withMessage('password is required')
+    .isLength({ min: 8 })
+    .withMessage('password must be at least 8 characters long'),
+  body('lastName').notEmpty().withMessage('last name is required'),
 ]);
