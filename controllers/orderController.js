@@ -3,13 +3,13 @@ import { StatusCodes } from 'http-status-codes';
 
 //GET ALL ORDERS
 export const getAllOrders = async (req, res) => {
-  console.log(req.user);
-  const orders = await Order.find({});
+  const orders = await Order.find({ createdBy: req.user.userId });
   res.status(StatusCodes.OK).json({ orders });
 };
 
 //CREATE ORDER
 export const createOrder = async (req, res) => {
+  req.body.createdBy = req.user.userId;
   const order = await Order.create(req.body);
   res.status(StatusCodes.CREATED).json({ order });
 };
