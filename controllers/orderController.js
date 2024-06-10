@@ -3,6 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 
 //GET ALL ORDERS
 export const getAllOrders = async (req, res) => {
+  console.log(req.user);
   const orders = await Order.find({});
   res.status(StatusCodes.OK).json({ orders });
 };
