@@ -67,6 +67,10 @@ const OrderSchema = new mongoose.Schema(
     //Deadline Date
     //Text input, instructions:{ }
     //upload files fileupUpload: { }
+    createdBy: {
+      type: mongoose.Types.ObjectId,
+      ref: 'User',
+    },
   },
   { timestamps: true }
 );
