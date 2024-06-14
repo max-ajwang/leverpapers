@@ -14,15 +14,19 @@ export const loader = async ({ request }) => {
   }
 };
 
+const AllOrdersContext = createContext();
+
 const AllOrders = () => {
   const { data } = useLoaderData();
 
   return (
-    <>
+    <AllOrdersContext.Provider value={{ data }}>
       <SearchContainer />
       <OrdersContainer />
-    </>
+    </AllOrdersContext.Provider>
   );
 };
+
+export const useAllOrdersContext = () => useContext(AllOrdersContext);
 
 export default AllOrders;
