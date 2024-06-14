@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import {
-  ORDER_TYPE,
+  ORDER_STATUS,
   PAPER_TYPE,
   ORDER_SORT_BY,
   EDUCATION_LEVEL,
@@ -11,12 +11,6 @@ import {
 
 const OrderSchema = new mongoose.Schema(
   {
-    orderType: {
-      type: String,
-      enum: Object.values(ORDER_TYPE),
-      default: ORDER_TYPE.WRITING,
-    },
-
     paperType: {
       type: String,
       enum: Object.values(PAPER_TYPE),
@@ -64,7 +58,16 @@ const OrderSchema = new mongoose.Schema(
       default: LANGUAGE.ENGLISH_US,
     },
 
-    //Deadline Date
+    orderStatus: {
+      type: String,
+      enum: Object.values(ORDER_STATUS),
+      default: ORDER_STATUS.ACCEPTING_BIDS,
+    },
+
+    deadlineDate: {
+      type: Date,
+    },
+
     //Text input, instructions:{ }
     //upload files fileupUpload: { }
     createdBy: {

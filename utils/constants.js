@@ -1,7 +1,9 @@
-export const ORDER_TYPE = {
-  WRITING: 'Writing',
+export const ORDER_STATUS = {
+  ACCEPTING_BIDS: 'Accepting Bids',
+  IN_PROGRESS: 'In Progress',
+  DONE: 'Done',
+  EDITTING: 'Editing',
   REWRITING: 'Rewriting',
-  EDITING: 'Editing',
 };
 
 export const PAPER_TYPE = {

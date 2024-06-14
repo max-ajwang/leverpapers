@@ -8,7 +8,7 @@ import {
   CITATION_STYLE,
   EDUCATION_LEVEL,
   LANGUAGE,
-  ORDER_TYPE,
+  ORDER_STATUS,
   PAPER_TYPE,
   SUBJECT,
 } from '../utils/constants.js';
@@ -40,9 +40,9 @@ export const validateOrderInput = withValidationErrors([
   body('topic').notEmpty().withMessage('Topic is required'),
   body('pages').notEmpty().withMessage('Pages is required'),
   body('sources').notEmpty().withMessage('Sources is required'),
-  body('orderType')
-    .isIn(Object.values(ORDER_TYPE))
-    .withMessage('Invalid Order Type'),
+  body('orderStatus')
+    .isIn(Object.values(ORDER_STATUS))
+    .withMessage('Invalid Order Status'),
   body('paperType')
     .isIn(Object.values(PAPER_TYPE))
     .withMessage('Invalid Paper Type'),
