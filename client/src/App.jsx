@@ -19,6 +19,8 @@ import { action as loginAction } from './pages/Login';
 import { loader as dashboardLoader } from './pages/DashboardLayout';
 import { action as addOrderAction } from './pages/AddOrder';
 import { loader as allOrdersLoader } from './pages/AllOrders';
+import { loader as editOrderLoader } from './pages/EditOrder';
+import { action as editOrderAction } from './pages/EditOrder';
 
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -75,7 +77,12 @@ const router = createBrowserRouter([
             path: 'admin',
             element: <Admin />,
           },
-          { path: 'edit-order/:id', element: <EditOrder /> },
+          {
+            path: 'edit-order/:id',
+            element: <EditOrder />,
+            loader: editOrderLoader,
+            action: editOrderAction,
+          },
         ],
       },
     ],
