@@ -21,6 +21,7 @@ import { action as addOrderAction } from './pages/AddOrder';
 import { loader as allOrdersLoader } from './pages/AllOrders';
 import { loader as editOrderLoader } from './pages/EditOrder';
 import { action as editOrderAction } from './pages/EditOrder';
+import { action as deleteOrderAction } from './pages/DeleteOrder';
 
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -83,6 +84,7 @@ const router = createBrowserRouter([
             loader: editOrderLoader,
             action: editOrderAction,
           },
+          { path: 'delete-order/:id', action: deleteOrderAction },
         ],
       },
     ],

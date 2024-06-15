@@ -1,7 +1,13 @@
-import React from 'react';
+import { redirect } from 'react-router-dom';
+import customFetch from '../utils/customFetch';
+import { toast } from 'react-toastify';
 
-const DeleteOrder = () => {
-  return <h1>DeleteOrder</h1>;
-};
-
-export default DeleteOrder;
+export async function action({ params }) {
+  try {
+    await customFetch.delete(`/orders/${params.id}`);
+    toast.success('Order deleted successfully');
+  } catch (error) {
+    toast.error(error.response.data.msg);
+  }
+  return redirect('/dashboard/all-orders');
+}
