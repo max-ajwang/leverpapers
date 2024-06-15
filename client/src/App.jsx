@@ -11,6 +11,7 @@ import {
   AllOrders,
   Profile,
   Admin,
+  EditOrder,
 } from './pages';
 
 import { action as registerAction } from './pages/Register';
@@ -74,6 +75,7 @@ const router = createBrowserRouter([
             path: 'admin',
             element: <Admin />,
           },
+          { path: 'edit-order/:id', element: <EditOrder /> },
         ],
       },
     ],

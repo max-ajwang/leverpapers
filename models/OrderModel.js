@@ -61,7 +61,7 @@ const OrderSchema = new mongoose.Schema(
     orderStatus: {
       type: String,
       enum: Object.values(ORDER_STATUS),
-      default: ORDER_STATUS.ACCEPTING_BIDS,
+      default: ORDER_STATUS.BIDDING,
     },
 
     deadlineDate: {

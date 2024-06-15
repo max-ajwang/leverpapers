@@ -3,8 +3,10 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  .job-icon {
+  .order-label {
     font-size: 1rem;
+    color: var(--primary-300);
+    text-transform: capitalize;
     margin-right: 1rem;
     display: flex;
     align-items: center;
@@ -12,7 +14,7 @@ const Wrapper = styled.div`
       color: var(--text-secondary-color);
     }
   }
-  .job-text {
+  .order-text {
     text-transform: capitalize;
     letter-spacing: var(--letter-spacing);
   }

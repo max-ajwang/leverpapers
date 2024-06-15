@@ -1,9 +1,7 @@
 export const ORDER_STATUS = {
-  ACCEPTING_BIDS: 'Accepting Bids',
-  IN_PROGRESS: 'In Progress',
-  DONE: 'Done',
-  EDITTING: 'Editing',
-  REWRITING: 'Rewriting',
+  BIDDING: 'bidding',
+  PROGRESS: 'progress',
+  DONE: 'done',
 };
 
 export const PAPER_TYPE = {

@@ -316,16 +316,17 @@ button:disabled {
 }
 
 /* BUTTONS AND BADGES */
-.pending {
+.bidding {
   background: #fef3c7;
   color: #f59e0b;
 }
 
-.interview {
+.progress {
   background: #e0e8f9;
-  color: #647acb;
+  color: #083bf3;
 }
-.declined {
+
+.done {
   background: #ffeeee;
-  color: #d66a6a;
+  color: #06c238;
 }
