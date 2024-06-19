@@ -22,6 +22,7 @@ import { loader as allOrdersLoader } from './pages/AllOrders';
 import { loader as editOrderLoader } from './pages/EditOrder';
 import { action as editOrderAction } from './pages/EditOrder';
 import { action as deleteOrderAction } from './pages/DeleteOrder';
+import { loader as adminLoader } from './pages/Admin';
 
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -77,6 +78,7 @@ const router = createBrowserRouter([
           {
             path: 'admin',
             element: <Admin />,
+            loader: adminLoader,
           },
           {
             path: 'edit-order/:id',
