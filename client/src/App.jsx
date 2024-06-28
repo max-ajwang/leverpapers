@@ -24,6 +24,7 @@ import { action as editOrderAction } from './pages/EditOrder';
 import { action as deleteOrderAction } from './pages/DeleteOrder';
 import { loader as adminLoader } from './pages/Admin';
 import { action as editAvatarAction } from './pages/Profile';
+import { loader as statsLoader } from './pages/Stats';
 
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -66,6 +67,7 @@ const router = createBrowserRouter([
           {
             path: 'stats',
             element: <Stats />,
+            loader: statsLoader,
           },
           {
             path: 'all-orders',
