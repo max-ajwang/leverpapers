@@ -1,4 +1,4 @@
-import { FormRow, FormRowSelect } from '../components';
+import { FormRow, FormRowSelect, SubmitBtn } from '../components';
 import Wrapper from '../assets/wrappers/DashboardFormPage';
 import { useLoaderData, useParams } from 'react-router-dom';
 import {
@@ -9,7 +9,7 @@ import {
   PAPER_TYPE,
   SUBJECT,
 } from '../../../utils/constants';
-import { Form, useNavigation, redirect } from 'react-router-dom';
+import { Form, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
 
@@ -39,9 +39,6 @@ export const action = async ({ request, params }) => {
 
 const EditOrder = () => {
   const { order } = useLoaderData();
-
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
 
   return (
     <Wrapper>
@@ -117,13 +114,7 @@ const EditOrder = () => {
             list={Object.values(ORDER_STATUS)}
           />
 
-          <button
-            type="submit"
-            className="btn btn-block form-btn "
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'submitting...' : 'submit'}
-          </button>
+          <SubmitBtn formBtn />
         </div>
       </Form>
     </Wrapper>

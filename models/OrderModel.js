@@ -48,7 +48,7 @@ const OrderSchema = new mongoose.Schema(
       type: String,
       maxlength: 50,
       enum: Object.values(CITATION_STYLE),
-      default: CITATION_STYLE.APA_7TH_EDITION,
+      default: CITATION_STYLE.APA,
     },
 
     language: {

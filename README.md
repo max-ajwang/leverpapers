@@ -5079,35 +5079,10 @@ export default SubmitBtn;
 
 ```json
 {
-  "name": "Zippy",
+  "name": "John",
   "email": "test@test.com",
   "password": "secret123",
-  "lastName": "ShakeAndBake",
-  "location": "Codeville"
-}
-{
-  "name": "Chuckleberry",
-  "email": "test@test.com",
-  "password": "secret123",
-  "lastName": "Gigglepants",
-  "location": "Laughterland"
-}
-
-{
-  "name": "Bubbles McLaughster",
-  "email": "test@test.com",
-  "password": "secret123",
-  "lastName": "Ticklebottom",
-  "location": "Giggle City"
-}
-
-
-{
-  "name": "Gigglesworth",
-  "email": "test@test.com",
-  "password": "secret123",
-  "lastName": "Snickerdoodle",
-  "location": "Chuckleburg"
+  "lastName": "Doe"
 }
 ```
 

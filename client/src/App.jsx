@@ -23,6 +23,7 @@ import { loader as editOrderLoader } from './pages/EditOrder';
 import { action as editOrderAction } from './pages/EditOrder';
 import { action as deleteOrderAction } from './pages/DeleteOrder';
 import { loader as adminLoader } from './pages/Admin';
+import { action as editAvatarAction } from './pages/Profile';
 
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -74,6 +75,7 @@ const router = createBrowserRouter([
           {
             path: 'profile',
             element: <Profile />,
+            action: editAvatarAction,
           },
           {
             path: 'admin',

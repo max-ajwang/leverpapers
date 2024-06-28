@@ -11,8 +11,7 @@ export const PAPER_TYPE = {
   ARTICLE_WRITING: 'Article Writing',
   ARTICLE_REVIEW: 'Article Review',
   BOOK_REVIEW: 'Book Review',
-  MOVIE_REVIEW: 'Moview Review',
-  CREATIVE_WRITING: 'Creative Writing',
+  MOVIE_REVIEW: 'Movie Review',
   CASE_STUDY: 'Case Study',
   RESEARCH_PAPER: 'Research paper',
   TERM_PAPER: 'Term Paper',
@@ -29,7 +28,7 @@ export const EDUCATION_LEVEL = {
 };
 
 export const SUBJECT = {
-  AMERICAN_HISTORY: 'American History',
+  AMERICAN_HISTORY: 'History',
   LITERATURE: 'Literature',
   PROGRAMMING: 'Programming',
   PSYCHIATRY: 'Psychiatry',
@@ -45,10 +44,9 @@ export const SUBJECT = {
 };
 
 export const CITATION_STYLE = {
-  APA_6TH_EDITION: 'APA 6th edition',
-  APA_7TH_EDITION: 'APA 7th edition',
+  APA: 'APA',
   CHICAGO: 'Chicago',
-  HAVARD: 'Havard',
+  HAVARD: 'Harvard',
   MLA: 'MLA',
   OTHER: 'Other',
 };
