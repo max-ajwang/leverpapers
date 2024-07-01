@@ -40,8 +40,8 @@ const Login = () => {
         <Logo />
         <h4>Login</h4>
 
-        <FormRow type="email" name="email" defaultValue="maxajwang@gmail.com" />
-        <FormRow type="password" name="password" defaultValue="secret123" />
+        <FormRow type="email" name="email" />
+        <FormRow type="password" name="password" />
 
         <SubmitBtn />
 

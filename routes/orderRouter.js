@@ -7,6 +7,7 @@ import {
   createOrder,
   updateOrder,
   deleteOrder,
+  showStats,
 } from '../controllers/orderController.js';
 import {
   validateOrderInput,
@@ -21,6 +22,9 @@ router
   .route('/')
   .get(getAllOrders)
   .post(checkForTestUser, validateOrderInput, createOrder);
+
+router.route('/stats').get(showStats);
+
 router
   .route('/:id')
   .get(validateIdParam, getOrder)
