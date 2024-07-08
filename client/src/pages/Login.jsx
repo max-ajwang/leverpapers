@@ -52,7 +52,7 @@ const Login = () => {
         <p>
           Not a member yet?
           <Link to="/register" className="member-btn">
-            Register
+            Sign Up
           </Link>
         </p>
       </Form>

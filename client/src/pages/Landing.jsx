@@ -3,15 +3,14 @@ import main from '../assets/images/main-alternative.svg';
 import Wrapper from '../assets/wrappers/LandingPage';
 import { Logo } from '../components';
 import { Link } from 'react-router-dom';
+import BlogNavbar from '../components/BlogNavbar';
 
 const Landing = () => {
   return (
     <Wrapper>
-      <nav>
-        <Logo />
-      </nav>
+      <BlogNavbar />
 
-      <div className="container page">
+      {/*<div className="container page">
         <div className="info">
           <h1>
             HIRE A <span>PROFESSIONAL</span> WRITER
@@ -28,8 +27,8 @@ const Landing = () => {
           </Link>
         </div>
 
-        {/*<img src={main} alt="writing" className="img main-img" />*/}
-      </div>
+        <img src={main} alt="writing" className="img main-img" />
+      </div>*/}
     </Wrapper>
   );
 };
