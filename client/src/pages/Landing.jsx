@@ -8,8 +8,6 @@ import BlogNavbar from '../components/BlogNavbar';
 const Landing = () => {
   return (
     <Wrapper>
-      <BlogNavbar />
-
       {/*<div className="container page">
         <div className="info">
           <h1>

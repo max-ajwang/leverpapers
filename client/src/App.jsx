@@ -32,18 +32,22 @@ export const checkDefaultTheme = () => {
   return isDarkTheme;
 };
 
+import { BlogNavbar } from './components';
+
 const isDarkThemeEnabled = checkDefaultTheme();
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomeLayout />,
+    element: <BlogNavbar />,
+    /*element: <HomeLayout />,*/
     errorElement: <Error />,
     children: [
       {
         index: true,
         element: <Landing />,
       },
+
       {
         path: 'register',
         element: <Register />,
@@ -54,6 +58,7 @@ const router = createBrowserRouter([
         element: <Login />,
         action: loginAction,
       },
+
       {
         path: 'dashboard',
         element: <DashboardLayout />,

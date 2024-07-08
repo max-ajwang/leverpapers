@@ -58,7 +58,6 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
           <BigSidebar />
 
           <div>
-            <Navbar />
             <div className="dashboard-page">
               <Outlet context={{ user }} />
             </div>
