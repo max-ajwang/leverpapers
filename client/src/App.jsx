@@ -1,7 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import {
   HomeLayout,
-  Landing,
   Register,
   Login,
   DashboardLayout,
@@ -25,6 +24,7 @@ import { action as deleteOrderAction } from './pages/DeleteOrder';
 import { loader as adminLoader } from './pages/Admin';
 import { action as editAvatarAction } from './pages/Profile';
 import { loader as statsLoader } from './pages/Stats';
+import { BlogNavbar } from './components';
 
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -32,22 +32,18 @@ export const checkDefaultTheme = () => {
   return isDarkTheme;
 };
 
-import { BlogNavbar } from './components';
-
 const isDarkThemeEnabled = checkDefaultTheme();
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <BlogNavbar />,
-    /*element: <HomeLayout />,*/
     errorElement: <Error />,
     children: [
       {
         index: true,
-        element: <Landing />,
+        element: <HomeLayout />,
       },
-
       {
         path: 'register',
         element: <Register />,
@@ -58,7 +54,6 @@ const router = createBrowserRouter([
         element: <Login />,
         action: loginAction,
       },
-
       {
         path: 'dashboard',
         element: <DashboardLayout />,
