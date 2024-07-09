@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import {
   HomeLayout,
   Register,
+  UserAuthForm,
   Login,
   DashboardLayout,
   Error,
@@ -45,14 +46,14 @@ const router = createBrowserRouter([
         element: <HomeLayout />,
       },
       {
-        path: 'register',
-        element: <Register />,
-        action: registerAction,
+        path: 'login',
+        element: <UserAuthForm type="sign-in" />,
+        action: loginAction,
       },
       {
-        path: 'login',
-        element: <Login />,
-        action: loginAction,
+        path: 'register',
+        element: <UserAuthForm type="sign-up" />,
+        action: registerAction,
       },
       {
         path: 'dashboard',
