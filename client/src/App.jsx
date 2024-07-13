@@ -1,4 +1,9 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+  Routes,
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+} from 'react-router-dom';
 import {
   HomeLayout,
   Register,
@@ -46,12 +51,12 @@ const router = createBrowserRouter([
         element: <HomeLayout />,
       },
       {
-        path: 'login',
+        path: 'signin',
         element: <UserAuthForm type="sign-in" />,
         action: loginAction,
       },
       {
-        path: 'register',
+        path: 'signup',
         element: <UserAuthForm type="sign-up" />,
         action: registerAction,
       },

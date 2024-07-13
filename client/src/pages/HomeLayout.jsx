@@ -8,6 +8,7 @@ import BlogNavbar from '../components/BlogNavbar';
 const HomeLayout = () => {
   return (
     <Wrapper>
+      <h1>HomeLayout</h1>
       {/*<div className="container page">
         <div className="info">
           <h1>

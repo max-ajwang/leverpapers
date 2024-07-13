@@ -1,4 +1,4 @@
-import { InputBox } from '../components';
+import { InputBox, SubmitBtn } from '../components';
 import googleIcon from '../assets/images/google.png';
 import { Link } from 'react-router-dom';
 import AnimationWrapper from '../common/page-animation';
@@ -37,7 +37,7 @@ const UserAuthForm = ({ type }) => {
             icon="fi-rr-key"
           />
 
-          <button className="btn-dark center mt-14" type="submit">
+          <button type="submit" className="btn-dark center mt-14">
             {type.replace('-', ' ')}
           </button>
 
@@ -55,17 +55,14 @@ const UserAuthForm = ({ type }) => {
           {type == 'sign-in' ? (
             <p className="mt-6 text-dark-grey text-xl text-center">
               Don't have an account?
-              <Link
-                to="/register"
-                className="underline text-black text-xl ml-1"
-              >
+              <Link to="/signup" className="underline text-black text-xl ml-1">
                 Join us today
               </Link>
             </p>
           ) : (
             <p className="mt-6 text-dark-grey text-xl text-center">
               Already a member?
-              <Link to="/login" className="underline text-black text-xl ml-1">
+              <Link to="/signin" className="underline text-black text-xl ml-1">
                 Sign in here.
               </Link>
             </p>
