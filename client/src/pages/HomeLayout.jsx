@@ -1,35 +1,9 @@
-import React from 'react';
-import main from '../assets/images/main-alternative.svg';
-import Wrapper from '../assets/wrappers/LandingPage';
-import { Logo } from '../components';
-import { Link } from 'react-router-dom';
-import BlogNavbar from '../components/BlogNavbar';
-
+import { Outlet } from 'react-router-dom';
 const HomeLayout = () => {
   return (
-    <Wrapper>
-      <h1>HomeLayout</h1>
-      {/*<div className="container page">
-        <div className="info">
-          <h1>
-            HIRE A <span>PROFESSIONAL</span> WRITER
-          </h1>
-          <p>
-            Our professional Writers will Help you Write your Customized Essays
-            at Affordable Rates
-          </p>
-          <Link to="/register" className="btn register-link">
-            Register / Order Now
-          </Link>
-          <Link to="/login" className="btn">
-            Login / Demo User
-          </Link>
-        </div>
-
-        <img src={main} alt="writing" className="img main-img" />
-      </div>*/}
-    </Wrapper>
+    <>
+      <Outlet />
+    </>
   );
 };
-
 export default HomeLayout;

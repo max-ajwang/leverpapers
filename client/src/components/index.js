@@ -1,10 +1,8 @@
 export { default as Logo } from './Logo';
-export { default as BlogNavbar } from './BlogNavbar';
-export { default as InputBox } from './InputBox';
+export { default as Navbar } from './Navbar';
 export { default as FormRow } from './FormRow';
 export { default as BigSidebar } from './BigSidebar';
 export { default as SmallSidebar } from './SmallSidebar';
-export { default as Navbar } from './Navbar';
 export { default as FormRowSelect } from './FormRowSelect';
 export { default as OrdersContainer } from './OrdersContainer';
 export { default as SearchContainer } from './SearchContainer';

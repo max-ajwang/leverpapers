@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  /*nav {
+  nav {
     width: var(--fluid-width);
     max-width: var(--max-width);
     margin: 0 auto;
@@ -45,6 +45,6 @@ const Wrapper = styled.section`
     .main-img {
       display: block;
     }
-  }*/
+  }
 `;
 export default Wrapper;

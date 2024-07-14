@@ -1,13 +1,8 @@
-import {
-  Routes,
-  Route,
-  RouterProvider,
-  createBrowserRouter,
-} from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import {
   HomeLayout,
+  Landing,
   Register,
-  UserAuthForm,
   Login,
   DashboardLayout,
   Error,
@@ -30,7 +25,6 @@ import { action as deleteOrderAction } from './pages/DeleteOrder';
 import { loader as adminLoader } from './pages/Admin';
 import { action as editAvatarAction } from './pages/Profile';
 import { loader as statsLoader } from './pages/Stats';
-import { BlogNavbar } from './components';
 
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -43,21 +37,21 @@ const isDarkThemeEnabled = checkDefaultTheme();
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <BlogNavbar />,
+    element: <HomeLayout />,
     errorElement: <Error />,
     children: [
       {
         index: true,
-        element: <HomeLayout />,
+        element: <Landing />,
       },
       {
-        path: 'signin',
-        element: <UserAuthForm type="sign-in" />,
+        path: 'login',
+        element: <Login />,
         action: loginAction,
       },
       {
-        path: 'signup',
-        element: <UserAuthForm type="sign-up" />,
+        path: 'register',
+        element: <Register />,
         action: registerAction,
       },
       {
