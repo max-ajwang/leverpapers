@@ -8,6 +8,8 @@ const Wrapper = styled.section`
     display: block;
     margin: 0 auto;
     margin-bottom: 1.38rem;
+    height: 7.015em;
+    width: 15.5em;
   }
   .form {
     max-width: 400px;

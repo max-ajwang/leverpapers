@@ -4,8 +4,10 @@ import Logo from './Logo';
 import { useDashboardContext } from '../pages/DashboardLayout';
 import LogoutContainer from './LogoutContainer';
 import ThemeToggle from './ThemeToggle';
+
 const Navbar = () => {
   const { toggleSidebar } = useDashboardContext();
+
   return (
     <Wrapper>
       <div className="nav-center">
@@ -24,4 +26,5 @@ const Navbar = () => {
     </Wrapper>
   );
 };
+
 export default Navbar;

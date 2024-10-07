@@ -11,3 +11,6 @@ export { default as SubmitBtn } from './SubmitBtn';
 export { default as ChartsContainer } from './ChartsContainer';
 export { default as StatsContainer } from './StatsContainer';
 /*export { default as Loading } from './Loading';*/
+export { default as BlogNavbar } from './BlogNavbar';
+export { default as LandingNavbar } from './LandingNavbar';
+export { default as Hero } from './Hero';

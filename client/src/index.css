@@ -14,16 +14,17 @@ html {
 
 :root {
   /* colors */
-  --primary-50: #e0fcff;
-  --primary-100: #bef8fd;
-  --primary-200: #87eaf2;
-  --primary-300: #54d1db;
-  --primary-400: #38bec9;
-  --primary-500: #2cb1bc;
-  --primary-600: #14919b;
-  --primary-700: #0e7c86;
-  --primary-800: #0a6c74;
-  --primary-900: #044e54;
+  --primary-50: #faf0de;
+  --primary-100: #fce7c0;
+  --primary-200: #fdd489;
+  --primary-300: #daac55;
+  --primary-400: #ce9833;
+  --primary-500: #b9872a;
+  --primary-600: #9c6c13;
+  --primary-700: #855b0e;
+  --primary-800: #583a04;
+  --primary-900: #3a2602;
+  --primary-1000: #ffa500;
 
   /* grey */
   --grey-50: #f8fafc;
@@ -54,7 +55,7 @@ html {
   --max-width: 1120px;
   --fixed-width: 600px;
   --fluid-width: 90vw;
-  --nav-height: 6rem;
+  --nav-height: 4rem;
   /* box shadow*/
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -171,12 +172,13 @@ ul {
   display: block;
   object-fit: cover;
 }
+
 /* buttons */
 
 .btn {
   cursor: pointer;
   color: var(--white);
-  background: var(--primary-500);
+  background: var(--primary-1000);
   border: transparent;
   border-radius: var(--border-radius);
   letter-spacing: var(--letter-spacing);
