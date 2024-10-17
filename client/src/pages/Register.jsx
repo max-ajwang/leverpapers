@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, redirect, Link } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
-import { FormRow, Logo, SubmitBtn } from '../components';
+import { FormRow, LandingNavbar, Logo, Navbar, SubmitBtn } from '../components';
 import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
 
@@ -21,6 +21,7 @@ export const action = async ({ request }) => {
 const Register = () => {
   return (
     <Wrapper>
+      <LandingNavbar />
       <Form method="post" className="form">
         <Logo />
         <h4>Register</h4>
