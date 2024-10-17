@@ -1,8 +1,8 @@
 # LeverPapers
 
-#### Track Your Job Search
+#### MERN Full Stack App
 
-Project in Action - [Jobify](https://www.jobify.live/)
+Project in Action - [Jobify](https://www.leverpapers.onrender.com/)
 
 #### Support
 
