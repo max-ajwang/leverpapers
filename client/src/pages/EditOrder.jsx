@@ -12,33 +12,53 @@ import {
 import { Form, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
+import { useQuery } from '@tanstack/react-query';
 
-export const loader = async ({ params }) => {
-  try {
-    const { data } = await customFetch.get(`/orders/${params.id}`);
-    return data;
-  } catch (error) {
-    toast.error(error.response.data.msg);
-    return redirect('/dashboard/all-orders');
-  }
+const singleOrderQuery = (id) => {
+  return {
+    queryKey: ['order', id],
+    queryFn: async () => {
+      const { data } = await customFetch.get(`/orders/${id}`);
+      return data;
+    },
+  };
 };
 
-export const action = async ({ request, params }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    try {
+      await queryClient.ensureQueryData(singleOrderQuery(params.id));
+      return params.id;
+    } catch (error) {
+      toast.error(error.response.data.msg);
+      return redirect('/dashboard/all-orders');
+    }
+  };
 
-  try {
-    await customFetch.patch(`/orders/${params.id}`, data);
-    toast.success('Order edited successfully');
-    return redirect('/dashboard/all-orders');
-  } catch (error) {
-    toast.error(error.response.data.msg);
-    return error;
-  }
-};
+export const action =
+  (queryClient) =>
+  async ({ request, params }) => {
+    const formData = await request.formData();
+    const data = Object.fromEntries(formData);
+
+    try {
+      await customFetch.patch(`/orders/${params.id}`, data);
+      queryClient.invalidateQueries(['orders']);
+      toast.success('Order edited successfully');
+      return redirect('/dashboard/all-orders');
+    } catch (error) {
+      toast.error(error.response.data.msg);
+      return error;
+    }
+  };
 
 const EditOrder = () => {
-  const { order } = useLoaderData();
+  const id = useLoaderData();
+
+  const {
+    data: { order },
+  } = useQuery(singleOrderQuery(id));
 
   return (
     <Wrapper>
