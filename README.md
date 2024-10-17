@@ -1,12 +1,8 @@
 # LeverPapers
 
-#### Track Your Job Search
+#### MERN Full Stack App
 
-Project in Action - [Jobify](https://www.jobify.live/)
-
-#### Support
-
-Find the App Useful? [You can always buy me a coffee](https://www.buymeacoffee.com/johnsmilga)
+Project in Action - [LeverPapers](https://www.leverpapers.onrender.com/)
 
 #### Run The App Locally
 
