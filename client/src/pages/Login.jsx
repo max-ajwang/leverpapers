@@ -9,6 +9,7 @@ export const action =
   async ({ request }) => {
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
+
     try {
       await customFetch.post('/auth/login', data);
       queryClient.invalidateQueries();

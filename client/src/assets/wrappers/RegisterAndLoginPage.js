@@ -4,13 +4,13 @@ const Wrapper = styled.section`
   min-height: 100vh;
   display: grid;
   align-items: center;
-  .logo {
+  /* .logo {
     display: block;
     margin: 0 auto;
     margin-bottom: 1.38rem;
     height: 7.015em;
     width: 15.5em;
-  }
+  } */
   .form {
     max-width: 400px;
     border-top: 5px solid var(--primary-500);

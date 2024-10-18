@@ -23,8 +23,8 @@ export const action =
       return redirect('/dashboard');
     } catch (error) {
       toast.error(error?.response?.data?.msg);
+      return null;
     }
-    return null;
   };
 
 const Profile = () => {

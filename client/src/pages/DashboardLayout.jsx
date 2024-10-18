@@ -71,7 +71,7 @@ const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
   );
 
   useEffect(() => {
-    if (isAuthError) return;
+    if (!isAuthError) return;
     logoutUser();
   }, [isAuthError]);
 
