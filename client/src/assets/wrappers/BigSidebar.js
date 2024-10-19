@@ -21,10 +21,10 @@ const Wrapper = styled.aside`
       margin-left: 0;
     }
     header {
-      height: 6rem;
+      height: 100%;
       display: flex;
       align-items: center;
-      padding-left: 0 rem;
+      padding-left: 0em;
     }
     .nav-links {
       padding-top: 2rem;

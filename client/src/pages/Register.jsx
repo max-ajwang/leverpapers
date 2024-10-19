@@ -23,8 +23,10 @@ const Register = () => {
     <Wrapper>
       <LandingNavbar />
       <Form method="post" className="form">
-        <Logo />
-        <h4>Register</h4>
+        <div className="authLogo">
+          <Logo />
+          <h4>Register</h4>
+        </div>
 
         <FormRow type="text" name="name" />
         <FormRow type="text" name="lastName" labelText="last name" />

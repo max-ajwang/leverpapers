@@ -5,6 +5,7 @@ const Wrapper = styled.section`
     height: 4.015em;
     width: 15.5em;
     object-fit: cover;
+    background-color: inherit;
   }
 `;
 

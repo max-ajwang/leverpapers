@@ -35,7 +35,7 @@ export const checkDefaultTheme = () => {
   return isDarkTheme;
 };
 
-const isDarkThemeEnabled = checkDefaultTheme();
+checkDefaultTheme();
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -67,12 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: (
-          <DashboardLayout
-            isDarkThemeEnabled={isDarkThemeEnabled}
-            queryClient={queryClient}
-          />
-        ),
+        element: <DashboardLayout queryClient={queryClient} />,
         loader: dashboardLoader(queryClient),
         children: [
           {
