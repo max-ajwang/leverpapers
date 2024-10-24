@@ -6,7 +6,15 @@ import { useContext, createContext } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 const allOrdersQuery = (params) => {
-  const { search, orderStatus, orderType, sort, page } = params;
+  const {
+    search,
+    orderStatus,
+    orderType,
+    sort,
+    subject,
+    educationLevel,
+    page,
+  } = params;
 
   return {
     queryKey: [
@@ -14,6 +22,8 @@ const allOrdersQuery = (params) => {
       search ?? '',
       orderStatus ?? 'all',
       orderType ?? 'all',
+      subject ?? 'all',
+      educationLevel ?? 'all',
       sort ?? 'newest',
       page ?? 1,
     ],

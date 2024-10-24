@@ -28,13 +28,14 @@ const Order = ({
       <header>
         <div className="main-icon">{paperType.charAt(0)}</div>
         <div className="info">
-          <h5>{subject}</h5>
-          <p>{topic}</p>
+          <h5>{_id}</h5>
+          <p>Topic: {topic}</p>
         </div>
       </header>
       <div className="content">
         <div className="content-center">
-          <OrderInfo label="subject: " text={paperType} />
+          <OrderInfo label="paper type: " text={paperType} />
+          <OrderInfo label="subject: " text={subject} />
           <OrderInfo label="education level: " text={educationLevel} />
           <OrderInfo label="pages: " text={pages} />
           <OrderInfo label="sources: " text={sources} />

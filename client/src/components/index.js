@@ -14,3 +14,4 @@ export { default as Loading } from './Loading';
 export { default as BlogNavbar } from './BlogNavbar';
 export { default as LandingNavbar } from './LandingNavbar';
 export { default as Hero } from './Hero';
+export { default as PageBtnContainer } from './PageBtnContainer';
