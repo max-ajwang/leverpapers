@@ -40,7 +40,6 @@ Navbar
   .logoContainer {
     height: 4.015em;
     width: 15.5em;
-    background-color: black;
   }
 
   .links a {

@@ -12,6 +12,11 @@ const Wrapper = styled.section`
 
   h3 {
     margin-bottom: 1.5rem;
+    color: var(--primary-1000);
+  }
+
+  .footerLink {
+    color: white;
   }
 
   p {

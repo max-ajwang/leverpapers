@@ -15,3 +15,10 @@ export { default as BlogNavbar } from './BlogNavbar';
 export { default as LandingNavbar } from './LandingNavbar';
 export { default as Hero } from './Hero';
 export { default as PageBtnContainer } from './PageBtnContainer';
+
+// Landing page componenets
+export { default as ServiceFeatures } from './ServiceFeatures';
+export { default as HowItWorks } from './HowItWorks';
+export { default as Milestones } from './Milestones';
+export { default as CustomerReviews } from './CustomerReviews';
+export { default as PricingGuide } from './PricingGuide';

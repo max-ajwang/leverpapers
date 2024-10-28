@@ -9,17 +9,17 @@ const Footer = () => {
         <div>
           <h3>Company</h3>
           <p>
-            <Link to="" className="">
+            <Link to="" className="footerLink">
               Company Profile
             </Link>
           </p>
           <p>
-            <Link to="" className="">
+            <Link to="" className="footerLink">
               Careers
             </Link>
           </p>
           <p>
-            <Link to="" className="">
+            <Link to="" className="footerLink">
               Privacy
             </Link>
           </p>
@@ -28,17 +28,17 @@ const Footer = () => {
         <div>
           <h3>More</h3>
           <p>
-            <Link to="" className="">
+            <Link to="" className="footerLink">
               Blog
             </Link>
           </p>
           <p>
-            <Link to="" className="">
+            <Link to="" className="footerLink">
               Privacy
             </Link>
           </p>
           <p>
-            <Link to="" className="">
+            <Link to="" className="footerLink">
               Subscribe
             </Link>
           </p>
