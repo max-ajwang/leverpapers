@@ -14,12 +14,11 @@ const Landing = () => {
       <LandingNavbar />
       <Hero />
       <ServiceFeatures />
-
-      {/* <Milestones />
-      <CustomerReviews />
-
       <HowItWorks />
-      <PricingGuide /> */}
+      <Milestones />
+      <CustomerReviews />
+      {/*<PricingGuide />
+       */}
     </>
   );
 };

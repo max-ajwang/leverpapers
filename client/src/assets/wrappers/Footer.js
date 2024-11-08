@@ -4,8 +4,7 @@ const Wrapper = styled.section`
   .footer {
     background-color: var(--grey-900);
     color: var(--white);
-    padding: 3rem;
-
+    padding: 1em 7.5rem 1em 17em;
     display: grid;
     gap: 2rem;
   }

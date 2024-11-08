@@ -3,10 +3,10 @@ import styled from 'styled-components';
 const Wrapper = styled.section`
   .mileStonesContainer {
     display: grid;
-    background-color: var(--primary-200);
+    background-color: var(--grey-50);
   }
 
-  h1 {
+  h2 {
     padding: 0.5em 0;
     font-weight: 600;
     text-align: center;
@@ -21,15 +21,27 @@ const Wrapper = styled.section`
     align-items: center;
   }
 
+  .mileStonesSections {
+    margin-bottom: 2em;
+  }
+
   .mileStonesSections li {
-    background-color: var(--primary-200);
-    border-radius: var(--border-radius);
-    width: 100%;
-    margin: 1em;
-    border: solid;
-    padding: 1em 0;
-    font-weight: 600;
+    background-color: var(--primary-1000);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    /* object-fit: cover; */
+    border: 2px solid var(--grey-900);
+    box-shadow: var(--shadow-4);
     text-align: center;
+    margin: 1em 0.5em 1em 1em;
+    padding: 1.75em 0;
+    font-weight: 600;
+  }
+
+  h3 {
+    margin-bottom: 0.5em;
+    font-weight: 600;
   }
 
   @media (min-width: 992px) {

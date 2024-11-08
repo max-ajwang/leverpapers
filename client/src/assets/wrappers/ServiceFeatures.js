@@ -13,13 +13,13 @@ const Wrapper = styled.section`
     margin: 1em;
   }
 
-  h1 {
+  h2 {
     padding: 1em 0;
     font-weight: 600;
     text-align: center;
   }
 
-  h3 {
+  h4 {
     color: var(--primary-1000);
     margin: 1em auto;
     font-weight: 600;
@@ -27,7 +27,7 @@ const Wrapper = styled.section`
 
   p {
     line-height: 2;
-    /* letter-spacing: var(--letter-spacing); */
+    letter-spacing: var(--letter-spacing);
   }
 
   @media (min-width: 992px) {
@@ -39,7 +39,7 @@ const Wrapper = styled.section`
       gap: 2em;
     }
 
-    h1 {
+    h2 {
       text-align: center;
       padding: 0 auto;
     }

@@ -1,50 +1,77 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  .howItWorkscontainer {
-    background-color: var(--grey-400);
+  .container {
+    margin: 2rem auto;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem;
   }
 
-  .howItWorksSections {
-    padding-top: 0.1em;
-    padding-right: 2em;
-    padding-left: 2em;
-    padding-bottom: 2em;
-    margin: 0 auto;
+  .howItWorksSection {
+    min-height: 100vh;
+    /* using flex because of better browser support */
+    display: grid;
+    justify-content: center;
     align-items: center;
   }
 
-  h1 {
-    padding: 0.5em 0;
+  h2 {
     font-weight: 600;
     text-align: center;
   }
 
-  h3 {
-    color: var(--primary-1000);
-    margin: 1em auto;
-    font-weight: 600;
+  .step {
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--grey);
+    margin: 1rem 4rem 1rem 4rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-3);
   }
-
-  p {
+  .step h5 {
+    text-transform: none;
     line-height: 1.5;
-    /* letter-spacing: var(--letter-spacing); */
   }
-
-  ul {
+  .step p {
+    color: var(--black);
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+    letter-spacing: var(--letter-spacing);
     line-height: 1.5;
-    list-style-type: upper-roman;
+  }
+  .step header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .step header h5 {
+    margin-bottom: 0;
+  }
+  .step-btn {
+    background: transparent;
+    border-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    background: var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--red);
+    cursor: pointer;
+    margin-left: 1rem;
+    align-self: center;
+    min-width: 2rem;
   }
 
-  li {
-  }
+  @media screen and (min-width: 992px) {
+    .howItWorksSection {
+      display: grid;
+    }
 
-  @media (min-width: 992px) {
-    .howItWorksSections {
-      padding-top: 0;
-      padding-right: 6em;
-      padding-left: 6em;
-      padding-bottom: 2em;
+    h2 {
+      text-align: center;
+      padding: 0 auto;
     }
   }
 `;

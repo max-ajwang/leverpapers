@@ -7,6 +7,19 @@ const Footer = () => {
     <Wrapper>
       <section className="footer">
         <div>
+          <h3>Contact Us</h3>
+          <p>566 Main Street, Illinois</p>
+          <p>+1(516)2346 124</p>
+          <p>support@leverpapers.com</p>
+          <div className="footerLogoContainer">
+            <Link to="/">
+              <Logo />
+            </Link>
+          </div>
+          <p>LeverPapers Inc. © 2024</p>
+        </div>
+
+        <div>
           <h3>Company</h3>
           <p>
             <Link to="" className="footerLink">
@@ -42,19 +55,6 @@ const Footer = () => {
               Subscribe
             </Link>
           </p>
-        </div>
-
-        <div>
-          <h3>Contact Us</h3>
-          <p>566 Main Street, Illinois</p>
-          <p>+1(516)2346 124</p>
-          <p>support@leverpapers.com</p>
-          <div className="footerLogoContainer">
-            <Link to="/">
-              <Logo />
-            </Link>
-          </div>
-          <p>LeverPapers Inc. © 2024</p>
         </div>
       </section>
     </Wrapper>

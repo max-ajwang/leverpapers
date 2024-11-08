@@ -4,31 +4,31 @@ const Milestones = () => {
   return (
     <Wrapper>
       <div className="mileStonesContainer">
-        <h1>Milestones</h1>
+        <h2>Milestones</h2>
         <ul className="mileStonesSections">
           <li>
-            <span>4.8/5 </span>
-            <span>Customer rating</span>
+            <h3>4.5/5</h3>
+            <p>Customer rating</p>
           </li>
           <li>
-            <span>8 </span>
-            <span>Years in business</span>
+            <h3>8 </h3>
+            <p>Years in business</p>
           </li>
           <li>
-            <span>20+ </span>
-            <span>Countries served</span>
+            <h3>20+ </h3>
+            <p>Countries served</p>
           </li>
           <li>
-            <span>1K+ </span>
-            <span>Writers</span>
+            <h3>1K+ </h3>
+            <p>Writers</p>
           </li>
           <li>
-            <span>200K+ </span>
-            <span>Successful orders</span>
+            <h3>200K+ </h3>
+            <p>Successful orders</p>
           </li>
           <li>
-            <span>1MM+ </span>
-            <span>Pages written</span>
+            <h3>1MM+ </h3>
+            <p>Pages written</p>
           </li>
         </ul>
       </div>

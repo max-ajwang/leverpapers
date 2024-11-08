@@ -5,10 +5,10 @@ const ServiceFeatures = () => {
     <Wrapper>
       <div className="container">
         <div className="serviceFeatures">
-          <h1>Service Features</h1>
+          <h2>Service Features</h2>
           <div className="serviceInfo">
             <div className="feature">
-              <h3>24/7 Support</h3>
+              <h4>24/7 Support</h4>
               <p>
                 Our support works around the clock for the best customer
                 experience. You can make an inquiry at any time.
@@ -16,7 +16,7 @@ const ServiceFeatures = () => {
             </div>
 
             <div className="feature">
-              <h3>Plagiarism Report</h3>
+              <h4>Plagiarism Report</h4>
               <p>
                 Request a plagiarism report for your paper and we will provide
                 it instantly at zero cost.
@@ -24,7 +24,7 @@ const ServiceFeatures = () => {
             </div>
 
             <div className="feature">
-              <h3>Unlimited Revisions</h3>
+              <h4>Unlimited Revisions</h4>
               <p>
                 Our writers work on unlimited revision at no extra charges. We
                 will make the necessary changes on your paper in the shortest
