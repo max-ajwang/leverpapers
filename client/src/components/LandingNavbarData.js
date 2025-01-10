@@ -8,16 +8,26 @@ export const links = [
   },
   {
     id: 2,
+    url: '/about',
+    text: 'About',
+  },
+  {
+    id: 3,
+    url: '/pricing',
+    text: 'Pricing',
+  },
+  {
+    id: 4,
     url: '/blog',
     text: 'Blog',
   },
   {
-    id: 3,
+    id: 5,
     url: '/register',
     text: 'Register',
   },
   {
-    id: 4,
+    id: 6,
     url: '/login',
     text: 'Login',
   },

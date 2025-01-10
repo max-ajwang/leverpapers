@@ -10,3 +10,5 @@ export { default as AddOrder } from './AddOrder';
 export { default as EditOrder } from './EditOrder';
 export { default as Profile } from './Profile';
 export { default as Admin } from './Admin';
+export { default as AboutUs } from './AboutUs';
+export { default as PricingGuide } from './PricingGuide';

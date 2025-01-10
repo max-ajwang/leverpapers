@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
   .mileStonesContainer {
+    padding: 1em 0em 0em 0em;
     display: grid;
-    background-color: var(--grey-50);
+    background-color: var(--white);
   }
 
   h2 {

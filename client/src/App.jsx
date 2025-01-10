@@ -14,6 +14,8 @@ import {
   Profile,
   Admin,
   EditOrder,
+  AboutUs,
+  PricingGuide,
 } from './pages';
 
 import { action as registerAction } from './pages/Register';
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+      },
+      {
+        path: 'about',
+        element: <AboutUs />,
+      },
+      {
+        path: 'pricing',
+        element: <PricingGuide />,
       },
       {
         path: 'login',

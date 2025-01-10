@@ -21,4 +21,3 @@ export { default as ServiceFeatures } from './ServiceFeatures';
 export { default as HowItWorks } from './HowItWorks';
 export { default as Milestones } from './Milestones';
 export { default as CustomerReviews } from './CustomerReviews';
-export { default as PricingGuide } from './PricingGuide';

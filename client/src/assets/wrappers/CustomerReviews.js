@@ -1,23 +1,17 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  /* section */
-  .section {
-    width: 90vw;
-    margin: 5rem auto;
-    max-width: var(--max-width);
-  }
-
-  @media screen and (min-width: 992px) {
-    .section {
-      width: 95vw;
-    }
-  }
   /*
 =============== 
 Slider
 ===============
 */
+
+  section {
+    background-color: var(--white);
+    padding: 4em 0em 1em 0em;
+  }
+
   .title {
     text-align: center;
     margin-bottom: 2rem;
@@ -41,7 +35,8 @@ Slider
     width: var(--max-width);
     height: 450px;
     text-align: center;
-    position: relative;
+    /* position: relative; */
+    position: sticky;
     display: flex;
     overflow: hidden;
   }

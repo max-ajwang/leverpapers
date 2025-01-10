@@ -1,14 +1,8 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
-  .container {
-    margin: 2rem auto;
-    background: var(--white);
-    border-radius: var(--border-radius);
-    padding: 2.5rem 2rem;
-  }
-
   .howItWorksSection {
+    background-color: var(--white);
     min-height: 100vh;
     /* using flex because of better browser support */
     display: grid;
@@ -16,13 +10,21 @@ const Wrapper = styled.section`
     align-items: center;
   }
 
+  .howItWorksContainer {
+    margin: 0em 0em 0em 0em;
+    padding: -15em 0em 2em 0em;
+  }
+
   h2 {
+    margin: 0.2em 0em 0.25em 0em;
     font-weight: 600;
     text-align: center;
   }
 
   .step {
+    background-color: var(--primary-1000);
     padding: 1rem 1.5rem;
+    width: var(--min-width);
     border: 2px solid var(--grey);
     margin: 1rem 4rem 1rem 4rem;
     border-radius: var(--border-radius);

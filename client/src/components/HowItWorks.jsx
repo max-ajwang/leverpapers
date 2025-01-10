@@ -10,7 +10,7 @@ const HowItWorks = () => {
       <div className="container">
         <div className="howItWorksSection">
           <h2>How It Works</h2>
-          <section className="info">
+          <section className="howItWorksContainer">
             {steps.map((step) => {
               return <SingleStep key={step.id} {...step}></SingleStep>;
             })}

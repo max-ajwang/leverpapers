@@ -5,7 +5,6 @@ import {
   Milestones,
   CustomerReviews,
   HowItWorks,
-  PricingGuide,
 } from '../components';
 
 const Landing = () => {
@@ -13,12 +12,10 @@ const Landing = () => {
     <>
       <LandingNavbar />
       <Hero />
+      <Milestones />
       <ServiceFeatures />
       <HowItWorks />
-      <Milestones />
       <CustomerReviews />
-      {/*<PricingGuide />
-       */}
     </>
   );
 };

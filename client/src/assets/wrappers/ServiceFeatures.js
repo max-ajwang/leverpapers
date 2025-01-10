@@ -2,15 +2,20 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
   .serviceFeatures {
+    background-color: var(--primary-1000);
+    box-shadow: var(--shadow-4);
   }
   .serviceInfo {
+    /* background-color: var(--primary-900); */
+    padding: 1em 4em 1em 4em;
   }
 
   .feature {
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-1);
+    box-shadow: var(--shadow-4);
     padding: 0.5em;
     margin: 1em;
+    background-color: var(--white);
   }
 
   h2 {
