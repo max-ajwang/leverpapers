@@ -7,12 +7,9 @@ const Hero = () => {
       <div className="hero">
         <div className="info">
           <h1>
-            HIRE A <span>PROFESSIONAL</span> <br /> WRITER.
+            MY SAMPLE <span>E-COMMERCE</span> <br /> WEB APPLICATION.
           </h1>
-          <p>
-            Our Professional Writers will Help you Write your Customized Essays
-            and Research Papers at Affordable Rates
-          </p>
+          <p>Create an account to explore.</p>
           <Link to="/login" className="btn register-link">
             Order Now
           </Link>

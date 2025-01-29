@@ -12,10 +12,10 @@ const Landing = () => {
     <>
       <LandingNavbar />
       <Hero />
-      <Milestones />
+      {/* <Milestones />
       <ServiceFeatures />
       <HowItWorks />
-      <CustomerReviews />
+      <CustomerReviews /> */}
     </>
   );
 };
