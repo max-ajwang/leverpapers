@@ -1,26 +1,26 @@
 import React from 'react';
 import { FaBehance, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 export const links = [
-  {
-    id: 1,
-    url: '/',
-    text: 'Home',
-  },
-  {
-    id: 2,
-    url: '/about',
-    text: 'About',
-  },
-  {
-    id: 3,
-    url: '/pricing',
-    text: 'Pricing',
-  },
-  {
-    id: 4,
-    url: '/blog',
-    text: 'Blog',
-  },
+  // {
+  //   id: 1,
+  //   url: '/',
+  //   text: 'Home',
+  // },
+  // {
+  //   id: 2,
+  //   url: '/about',
+  //   text: 'About',
+  // },
+  // {
+  //   id: 3,
+  //   url: '/pricing',
+  //   text: 'Pricing',
+  // },
+  // {
+  //   id: 4,
+  //   url: '/blog',
+  //   text: 'Blog',
+  // },
   {
     id: 5,
     url: '/register',
