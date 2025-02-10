@@ -15,7 +15,7 @@ const Wrapper = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 0em 1.5em;
+    /* padding: 0em 10em; */
     margin-top: var(--nav-height);
   }
 
@@ -26,6 +26,7 @@ const Wrapper = styled.section`
       color: var(--primary-1000);
     }
     margin-bottom: 1.5rem;
+    padding-left: 20rem;
   }
 
   .info p {
@@ -33,6 +34,7 @@ const Wrapper = styled.section`
     color: var(--white);
     margin-bottom: 1.5rem;
     max-width: 35em;
+    padding-left: 20rem;
   }
 
   .register-link {
@@ -41,6 +43,7 @@ const Wrapper = styled.section`
 
   .btn {
     padding: 0.75rem 1rem;
+    margin-left: 20rem;
   }
 
   @media (min-width: 992px) {
