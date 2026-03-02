@@ -38,5 +38,8 @@
     "nanoid": "^5.0.9",
     "nodemon": "^3.1.9",
     "react-toastify": "^11.0.2"
+  },
+  "devDependencies": {
+    "rollup": "^4.59.0"
   }
 }
